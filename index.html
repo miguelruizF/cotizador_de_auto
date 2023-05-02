@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/normalize.css">
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <div>
-            <div></div>
-            <div>
+        <div class="container div_principal">
+            <div class="div_content">
                 <h1>Cotiza tu seguro de auto</h1>
-                <form action="">
+                <form action="" class="formulario">
                     <label for="marca">Marca: </label>
                     <select name="marca" id="marcar">
-                        <option value="">- Seleccionar -</option>
+                        <option value="" selected="selected">- Seleccionar -</option>
                         <option value="Americano">Americano</option>
                         <option value="Asiatico">Asiatico</option>
                         <option value="Europeo">Europeo</option>
@@ -24,7 +23,7 @@
 
                     <label for="anio">Año: </label>
                     <select name="anio" id="anio">
-                        <option value="">- Seleccionar -</option>
+                        <option value="" selected="selected">- Seleccionar -</option>
                     </select>
                     <h2>Tipo de seguro</h2>
                     <div>
@@ -38,7 +37,7 @@
                 </form>
             </div>
         </div>
-    </main>
+
     <script src="./app.js"></script>
 </body>
 </html>
