@@ -11,33 +11,43 @@
 <body>
         <div class="container div_principal">
             <div class="div_content">
-                <h1>Cotiza tu seguro de auto</h1>
-                <form action="" class="formulario">
-                    <label for="marca">Marca: </label>
-                    <select name="marca" id="marcar">
-                        <option value="" selected="selected">- Seleccionar -</option>
-                        <option value="Americano">Americano</option>
-                        <option value="Asiatico">Asiatico</option>
-                        <option value="Europeo">Europeo</option>
-                    </select>
-
-                    <label for="anio">Año: </label>
-                    <select name="anio" id="anio">
-                        <option value="" selected="selected">- Seleccionar -</option>
-                    </select>
-                    <h2>Tipo de seguro</h2>
-                    <div>
-                        <label for="basico">Basico</label>
-                        <input type="radio" name="basico" id="basico">
-                        <label for="completo">Completo</label>
-                        <input type="radio" name="completo" id="completo">
-                    </div>
-                    <div></div>
-                    <button type="submit">Cotizar seguro</button>
-                </form>
+                <div class="div_title">
+                    <h1 class="title">Cotiza tu seguro de auto</h1>
+                </div>
+                <div class="div_form">
+                    <form action="" class="formulario">
+                        <div class="div_marca">
+                            <div class="input_container">
+                                <label for="marca">Marca: </label>
+                                <select name="marca" id="marcar">
+                                    <option value="" selected="selected">- Seleccionar -</option>
+                                    <option value="Americano">Americano</option>
+                                    <option value="Asiatico">Asiatico</option>
+                                    <option value="Europeo">Europeo</option>
+                                </select>
+                            </div>
+                            <div class="input_container">
+                                <label for="anio">Año: </label>
+                                <select name="anio" id="anio">
+                                    <option value="" selected="selected">- Seleccionar -</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2>Tipo de seguro</h2>
+                        <div class="div_check_principal">
+                            <div class="div_check">
+                                <label for="basico"><input type="radio" name="seguro" id="basico" checked> Básico</label>
+                            </div>
+                            <div class="div_check">
+                                <label for="completo"><input type="radio" name="seguro" id="completo"> Completo</label>
+                            </div>
+                        </div>
+                        <div></div>
+                        <button type="submit" class="btn_cotizar">Cotizar seguro</button>
+                    </form>
+                </div>
             </div>
         </div>
-
     <script src="./app.js"></script>
 </body>
 </html>
