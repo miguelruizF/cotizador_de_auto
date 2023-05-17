@@ -142,3 +142,25 @@ select{
     background-color: #006058;
     color: #ffffff;
 }
+
+.error{
+    background-color: #fbe9e7;
+    border: 1px solid #f4511e;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f4511e;
+}
+
+.correcto{
+    background-color: rgb(211,249,187);
+    border: 1px solid rgb(50,167,0);
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(4,150,50);
+}
+
+.mt-10{
+    margin-top: 10px;
+}
