@@ -8,6 +8,41 @@ function Seguros(marca, year, tipo){
     this.tipo = tipo
 }
 
+//Realiza la cotizacion del seguro
+Seguros.prototype.cotizarSeguro = function(){
+    let cantidad;
+    const base = 2000;
+
+    switch (this.marca) {
+        case "1":
+            cantidad = base * 1.15;
+            break;
+        case "2":
+            cantidad = base * 1.05;
+            break;
+        case "3":
+            cantidad = base * 1.35;
+            break;
+        default:
+            break;
+    }
+    //Leer el año
+    const diferencia = new Date().getFullYear() - this.year;
+
+    cantidad -= ((diferencia * 3) * cantidad) / 100;
+
+    //Tipo de seguro
+    if(this.tipo === "basico"){
+        cantidad *= 1.30;
+    }else{
+        cantidad *= 1.50;
+    }
+    return cantidad;
+
+    console.log(cantidad);
+    
+}
+
 function UI(){
 }
 
@@ -47,6 +82,38 @@ UI.prototype.mostrarMensaje = (mensaje, tipo) => {
     }, 3000);
 }
 
+UI.prototype.mostrarResultado = (seguro, total) =>{
+    const {marca, year} = seguro;
+    let textoMarca;
+
+    switch (marca) {
+        case "1":
+            textoMarca = "Americano";
+            break;
+        case "2":
+            textoMarca = "Asiatico";
+            break;
+        case "3":
+            textoMarca = "Europeo";
+            break;    
+        default:
+            break;
+    }
+    const div = d.createElement("div");
+    div.classList.add("mt-10");
+    div.innerHTML = `
+        <p class="header">Tu Resumen</p>
+        <p class="font-bold">Marca: <span class="font-normal">${textoMarca}</span></p>
+        <p class="font-bold">Año: <span class="font-normal">${year}</span></p>
+        <p class="font-bold b-bottom">Total: <span class="font-normal">$${total}</span></p>
+    `;
+    const resultadoDiv = d.querySelector("#resultado");
+    
+
+    setTimeout(()=>{
+        resultadoDiv.appendChild(div);
+    }, 3000);
+}
 //Instanciar UI
 const ui = new UI();
 
@@ -79,4 +146,18 @@ function cotizarSeguro(e){
     }
 
     ui.mostrarMensaje("Cotizando...", "exito");
-}
+
+    //Ocultar cotizaciones previas
+    const resultados = d.querySelector("#resultado div");
+    if(resultados != null){
+        resultados.remove();
+    }
+
+    //Instanciar el seguro
+    const seguro = new Seguros(marca, year, tipo);
+    // console.log(seguro);
+    const total = seguro.cotizarSeguro();
+
+    //Prototype para mostrar el total
+    ui.mostrarResultado(seguro, total);
+}   

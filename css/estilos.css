@@ -39,7 +39,7 @@ h1,h2{
 
 .div_principal{
     width: 80%;
-    height: 70%;
+    height: 80%;
     margin: 0 auto;
     -webkit-box-shadow: 21px 22px 21px -3px rgba(0,0,0,0.47);
     -moz-box-shadow: 21px 22px 21px -3px rgba(0,0,0,0.47);
@@ -91,7 +91,7 @@ h1,h2{
 }
 
 form{
-    width: 600px;
+    min-width: 600px;
 }
 
 .input_container{
@@ -136,6 +136,7 @@ select{
     font-size: 2.5rem;
     cursor: pointer;
     transition: all .3s ease;
+    margin-top: 3rem;
 }
 
 .btn_cotizar:hover{
@@ -164,3 +165,28 @@ select{
 .mt-10{
     margin-top: 10px;
 }
+
+.font-bold{
+    font-weight: bold;
+    font-size: 18px;
+    border-left: 1px solid rgb(6, 195, 208);
+    border-right: 1px solid rgb(6, 195, 208);
+    padding: 1rem;
+}
+
+.b-bottom{
+    border-bottom: 1px solid rgb(6, 195, 208);
+}
+
+.font-normal{
+    font-weight: 100;
+}
+
+.header{
+    padding: 10px 0;
+    background-color: rgb(6, 195, 208);
+    color: white;
+    font-weight: bold;
+}
+
+
